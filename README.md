@@ -1,24 +1,37 @@
-# Gift Page
+# Gift Fun Game 🎁
 
-A playful, romantic web page to surprise your loved one! The page asks, "Do you still want a gift from me?" with a moving "Yes" button (impossible to click) and a functional "No" button. Each attempt to click "Yes" shows a funny prompt and meme. Clicking "No" reveals a sweet message.
+A playful, romantic interactive web page created to surprise Farah! This fun game presents a question: "Do you still want a gift from me?" with two buttons - but there's a twist!
 
-## How to Use
+## 🎮 How It Works
 
-1. Open `gift.html` in your browser to preview.
-2. To make it public, upload this file to GitHub Pages, Netlify, or Vercel (see below).
+The page features two buttons:
+- **"Yes" Button**: Tries to evade the mouse cursor! When you hover over it or try to click it, it randomly moves to a different position on the screen, making it impossible to click.
+- **"No" Button**: A perfectly functional button that reveals a sweet romantic message when clicked.
 
-## Deploying to GitHub Pages
+Each time you attempt to click "Yes", the page shows:
+- A humorous prompt encouraging you to click "No" instead
+- A funny meme that changes with each attempt
 
-1. Rename `gift.html` to `index.html`.
-2. Create a new GitHub repository and upload `index.html`.
-3. Go to the repository's Settings > Pages.
-4. Set the source to the main branch (root).
-5. GitHub will provide a public link (e.g., `https://yourusername.github.io/reponame/`).
+Clicking "No" reveals the true message: *"I agree with you! The real gift is me, and you shall tie the knot with me later this year. 💍❤️"*
 
-## Customization
+## ✨ Features
 
-- Edit prompts and meme URLs in the `<script>` section of `index.html` to personalize.
+- **Interactive UI**: Moving button that evades the cursor using JavaScript
+- **Dynamic Content**: 6 different prompts and memes that cycle through
+- **Responsive Design**: Works on mobile and desktop
+- **Romantic Theme**: Pink color scheme with modern, clean design
+- **Smooth Animations**: CSS transitions for hover effects
 
----
+## 🚀 Live Demo
 
-Made with ❤️ for someone special!
+Visit the live page here: [https://salmanhussain-developer.github.io/Gift-Fun-Game/gift.html](https://salmanhussain-developer.github.io/Gift-Fun-Game/gift.html)
+
+## 🛠️ Technology Stack
+
+- **HTML5**: Structure and content
+- **CSS3**: Styling, animations, and responsive design
+- **Vanilla JavaScript**: Interactive button behavior, event handling, and dynamic content
+
+## 📱 How to Share
+
+Simply copy this link and send it via WhatsApp, text, or any messaging app:
