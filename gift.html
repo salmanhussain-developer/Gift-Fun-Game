@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farah, do you still want a gift from me?</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background: #ffe6f2;
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+        }
+        .container {
+            background: #fff0f6;
+            padding: 2rem 3rem;
+            border-radius: 20px;
+            box-shadow: 0 4px 24px rgba(255, 0, 128, 0.1);
+            text-align: center;
+            min-width: 320px;
+        }
+        h1 {
+            color: #d72660;
+            margin-bottom: 2rem;
+        }
+        .btn-area {
+            position: relative;
+            height: 80px;
+            margin-bottom: 1rem;
+        }
+        button {
+            background: #d72660;
+            color: white;
+            border: none;
+            padding: 1rem 2.5rem;
+            border-radius: 30px;
+            font-size: 1.3rem;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        button:hover {
+            background: #a61b46;
+        }
+        .prompt {
+            margin-top: 1.5rem;
+            font-size: 1.1rem;
+            color: #d72660;
+            min-height: 1.5em;
+        }
+        #meme {
+            margin-top: 1rem;
+            min-height: 120px;
+        }
+        .message {
+            margin-top: 2rem;
+            font-size: 1.2rem;
+            color: #7d1840;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Farah, do you still want a gift from me?</h1>
+        <div class="btn-area">
+            <button id="yesBtn">Yes</button>
+            <button id="noBtn">No</button>
+        </div>
+        <div class="prompt" id="prompt"></div>
+        <div id="meme"></div>
+        <div class="message" id="message">
+            I agree with you! The real gift is me, and you shall tie the knot with me later this year. 💍❤️
+        </div>
+    </div>
+    <script>
+        // No button logic
+        document.getElementById('noBtn').onclick = function() {
+            document.getElementById('message').style.display = 'block';
+            this.style.display = 'none';
+            document.getElementById('yesBtn').style.display = 'none';
+            document.getElementById('prompt').style.display = 'none';
+            document.getElementById('meme').style.display = 'none';
+        };
+
+        // Yes button logic: evade the mouse and show prompts
+        const yesBtn = document.getElementById('yesBtn');
+        const promptDiv = document.getElementById('prompt');
+        let evadeCount = 0;
+        const prompts = [
+            "Are you sure you want to click Yes?",
+            "No is the right answer, trust me!",
+            "Seriously, click No!",
+            "Come on, just click No!",
+            "You really need to click No, it's worth it!",
+            "Last chance... No is the way!"
+        ];
+        const memes = [
+            "https://i.imgflip.com/30b1gx.jpg", // Distracted boyfriend
+            "https://i.imgflip.com/1ur9b0.jpg", // Drake Hotline Bling
+            "https://i.imgflip.com/26am.jpg",   // Grumpy Cat
+            "https://i.imgflip.com/4/4t0m5.jpg", // Waiting Skeleton
+            "https://i.imgflip.com/2wifvo.jpg", // Surprised Pikachu
+            "https://i.imgflip.com/3si4.jpg"    // Success Kid
+        ];
+        function showPrompt() {
+            const idx = evadeCount % prompts.length;
+            promptDiv.textContent = prompts[idx];
+            // Show meme
+            const memeDiv = document.getElementById('meme');
+            memeDiv.innerHTML = `<img src="${memes[idx]}" alt="meme" style="max-width: 250px; border-radius: 12px; box-shadow: 0 2px 12px #d7266022;">`;
+            evadeCount++;
+        }
+        yesBtn.addEventListener('mouseenter', function() {
+            moveYesButton();
+            showPrompt();
+        });
+        yesBtn.addEventListener('mousemove', function() {
+            moveYesButton();
+            showPrompt();
+        });
+        function moveYesButton() {
+            // Move anywhere within the viewport (window)
+            const btnRect = yesBtn.getBoundingClientRect();
+            const padding = 10;
+            const maxLeft = window.innerWidth - btnRect.width - padding;
+            const maxTop = window.innerHeight - btnRect.height - padding;
+            let newLeft = Math.random() * maxLeft;
+            let newTop = Math.random() * maxTop;
+            yesBtn.style.position = 'fixed';
+            yesBtn.style.left = `${newLeft}px`;
+            yesBtn.style.top = `${newTop}px`;
+        }
+    </script>
+</body>
+</html>
